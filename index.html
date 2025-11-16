@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Universal Care & Home Services Ltd. — আপনার বিশ্বস্ত সেবাদাতা</title>
+  <meta name="description" content="Universal Care — Electrician, Plumber, Maid, Caregiver, Deep Cleaning and more. Trusted, Verified workers in Basabo, Dhaka." />
+  <meta name="keywords" content="home service, electrician dhaka, maid service, caregiver, deep cleaning, plumber, Basabo" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Universal Care & Home Services Ltd.",
+    "telephone":"+8801605888672",
+    "address":{"@type":"PostalAddress","streetAddress":"Basabo","addressLocality":"Dhaka","addressCountry":"BD"},
+    "openingHours":"Mo,Tu,We,Th,Fr,Sa 08:00-20:00",
+    "priceRange":"BDT"
+  }
+  </script>
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <nav class="header-bg text-white sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/A_logo.png" alt="Universal Care" class="w-10 h-10 rounded-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/40x40/10b981/ffffff?text=UC'">
+          <div>
+            <div class="font-extrabold">Universal Care</div>
+            <div class="text-xs text-gray-200">Trusted Home Services</div>
+          </div>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#services" class="hover:text-yellow-400">পরিষেবা</a>
+          <a href="#pricing" class="hover:text-yellow-400">প্রাইসিং</a>
+          <a href="#booking" class="hover:text-yellow-400">বুকিং</a>
+          <a href="#contact" class="hover:text-yellow-400">যোগাযোগ</a>
+          <button id="open-admin" class="bg-white/10 px-3 py-1.5 rounded-full hover:bg-white/20">Admin</button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a href="https://wa.me/8801605888672" target="_blank" class="btn-primary text-white px-3 py-2 rounded-full text-sm">WhatsApp</a>
+          <button id="mobile-toggle" class="md:hidden px-3 py-2 rounded hover:bg-white/10">☰</button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden py-2">
+        <a href="#services" class="block py-1">পরিষেবা</a>
+        <a href="#pricing" class="block py-1">প্রাইসিং</a>
+        <a href="#booking" class="block py-1">বুকিং</a>
+        <a href="#contact" class="block py-1">যোগাযোগ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="max-w-6xl mx-auto px-4 sm:px-6 mt-6">
+    <div class="bg-white rounded-2xl overflow-hidden grid md:grid-cols-2 gap-6 card-shadow p-6 md:p-10 items-center">
+      <div>
+        <h1 class="text-2xl md:text-4xl font-extrabold">Universal Care & Home Services Ltd.</h1>
+        <p class="mt-3 text-lg text-gray-700">"বিশ্বাসের সাথে ঘরোয়া সব সেবা এখন আপনার দরজায়"</p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-600">
+          <li>✔ NID ভেরিফাইড কর্মী</li>
+          <li>✔ সাশ্রয়ী মূল্য ও গ্যারান্টি</li>
+          <li>✔ দ্রুত সাপোর্ট (WhatsApp / ফোন)</li>
+        </ul>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#booking" class="btn-primary text-white px-5 py-3 rounded-full inline-block text-center">বুক করুন এখনই</a>
+          <a href="tel:+8801605888672" class="px-5 py-3 border rounded-full inline-block text-center">কল করুন: +880 1605-888672</a>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50 p-4 rounded-xl">
+        <h3 class="font-bold text-lg mb-3">Quick Booking</h3>
+        <form id="quick-book" class="space-y-3">
+          <input id="q-name" class="w-full p-3 border rounded" placeholder="আপনার নাম" required>
+          <input id="q-phone" class="w-full p-3 border rounded" placeholder="ফোন নম্বর (+8801...)" required>
+          <select id="q-service" class="w-full p-3 border rounded">
+            <option>— পরিষেবা নির্বাচন করুন —</option>
+            <option>Electrician</option>
+            <option>Plumber</option>
+            <option>Maid</option>
+            <option>Caregiver</option>
+            <option>Deep Cleaning</option>
+            <option>Other</option>
+          </select>
+          <div class="flex gap-2">
+            <button type="submit" class="btn-primary text-white px-4 py-2 rounded w-full">Send Booking</button>
+            <a id="wa-quick" href="https://wa.me/8801605888672" target="_blank" class="px-4 py-2 border rounded w-full text-center">WhatsApp</a>
+          </div>
+          <p class="text-xs text-gray-500">(ডেমো: ফর্ম লোকালি সংরক্ষণ করে — Firebase কনফিগ দিলে সরাসরি DB যাবে)</p>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 space-y-10 mt-6">
+
+    <!-- SERVICES -->
+    <section id="services" class="bg-white p-6 rounded-xl card-shadow">
+      <h2 class="text-2xl font-bold mb-4">আমাদের সেবা</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-4 rounded-lg border card-shadow text-center">
+          <div class="text-3xl mb-2">🔌</div>
+          <h4 class="font-semibold">ইলেকট্রিশিয়ান</h4>
+          <p class="text-sm text-gray-600 mt-2">ওয়্যারিং, ফিক্সিং, সার্কিট</p>
+        </div>
+        <div class="p-4 rounded-lg border card-shadow text-center">
+          <div class="text-3xl mb-2">🚰</div>
+          <h4 class="font-semibold">প্লাম্বার</h4>
+          <p class="text-sm text-gray-600 mt-2">লিক রিপেয়ার, পাইপ</p>
+        </div>
+        <div class="p-4 rounded-lg border card-shadow text-center">
+          <div class="text-3xl mb-2">🧹</div>
+          <h4 class="font-semibold">ডিপ ক্লিনিং</h4>
+          <p class="text-sm text-gray-600 mt-2">ফ্ল্যাট/কিচেন/সোফা</p>
+        </div>
+        <div class="p-4 rounded-lg border card-shadow text-center">
+          <div class="text-3xl mb-2">👩‍⚕</div>
+          <h4 class="font-semibold">কেয়ারগিভার</h4>
+          <p class="text-sm text-gray-600 mt-2">বৃদ্ধ/রোগী দেখাশোনা</p>
+        </div>
+        <div class="p-4 rounded-lg border card-shadow text-center">
+          <div class="text-3xl mb-2">🧑‍🍳</div>
+          <h4 class="font-semibold">বুয়া (Maid)</h4>
+          <p class="text-sm text-gray-600 mt-2">ক্লিনিং, রান্না, বাচ্চাদের দেখাশোনা</p>
+        </div>
+        <div class="p-4 rounded-lg border card-shadow text-center">
+          <div class="text-3xl mb-2">🔧</div>
+          <h4 class="font-semibold">ওয়েল্ডিং</h4>
+          <p class="text-sm text-gray-600 mt-2">গেট/গ্রিল মেরামত</p>
+        </div>
+        <div class="p-4 rounded-lg border card-shadow text-center">
+          <div class="text-3xl mb-2">🎨</div>
+          <h4 class="font-semibold">পেইন্টিং</h4>
+          <p class="text-sm text-gray-600 mt-2">ইন্টারিয়র, এক্সটেরিয়র</p>
+        </div>
+        <div class="p-4 rounded-lg border card-shadow text-center">
+          <div class="text-3xl mb-2">🚗</div>
+          <h4 class="font-semibold">ড্রাইভার</h4>
+          <p class="text-sm text-gray-600 mt-2">পার্ট/ফুল-টাইম ড্রাইভার</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING (simple) -->
+    <section id="pricing" class="bg-white p-6 rounded-xl card-shadow">
+      <h2 class="text-2xl font-bold mb-4">স্পষ্ট ও সাশ্রয়ী প্রাইসিং</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="p-4 rounded-lg border card-shadow">
+          <h4 class="font-semibold">Basic</h4>
+          <p class="mt-2 text-sm text-gray-600">Fan/Light repair, small plumbing</p>
+          <div class="text-3xl font-extrabold mt-4">৳299+</div>
+        </div>
+        <div class="p-4 rounded-lg border card-shadow">
+          <h4 class="font-semibold">Standard</h4>
+          <p class="mt-2 text-sm text-gray-600">Full wiring, deep cleaning</p>
+          <div class="text-3xl font-extrabold mt-4">৳1,999+</div>
+        </div>
+        <div class="p-4 rounded-lg border card-shadow">
+          <h4 class="font-semibold">Contract</h4>
+          <p class="mt-2 text-sm text-gray-600">Caregiver monthly, office contracts</p>
+          <div class="text-3xl font-extrabold mt-4">৳8,000+/মাস</div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mt-3">*Final cost depends on scope & location.</p>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section id="booking" class="bg-indigo-50 p-6 rounded-xl card-shadow">
+      <h2 class="text-2xl font-bold mb-3">বুকিং ফর্ম</h2>
+      <p class="text-sm text-gray-700 mb-4">ফর্ম পূরণ করুন — আমরা শীঘ্রই আপনার সাথে যোগাযোগ করবো।</p>
+
+      <form id="booking-form" class="grid md:grid-cols-2 gap-3">
+        <input id="client-name" class="p-3 border rounded" placeholder="আপনার নাম" required />
+        <input id="client-phone" class="p-3 border rounded" placeholder="ফোন নম্বর (+8801...)" required />
+        <input id="client-address" class="p-3 border rounded md:col-span-2" placeholder="ঠিকানা (সম্পূর্ণ)" required />
+        <select id="service-type" class="p-3 border rounded" required>
+          <option value="">-- পরিষেবা নির্বাচন করুন --</option>
+          <option>Electrician</option>
+          <option>Plumber</option>
+          <option>Deep Cleaning</option>
+          <option>Caregiver</option>
+          <option>Maid</option>
+          <option>Painting</option>
+        </select>
+        <button id="booking-submit" class="btn-primary text-white py-3 rounded md:col-span-2 disabled:opacity-60" type="submit" disabled>
+          <span id="booking-spinner" class="hidden inline-block w-4 h-4 border-b-2 border-white rounded-full mr-2 animate-spin"></span>
+          বুকিং নিশ্চিত করুন
+        </button>
+      </form>
+
+      <div id="booking-message" class="mt-4 hidden p-3 rounded text-sm"></div>
+    </section>
+
+    <!-- PAYMENT -->
+    <section id="payment" class="bg-white p-6 rounded-xl card-shadow">
+      <h2 class="text-2xl font-bold mb-3">পেমেন্ট (অগ্রিম / ডিপোজিট)</h2>
+      <p class="text-sm text-gray-700 mb-4">বেছে নিন আপনার সুবিধাজনক পেমেন্ট অপশন — লিংক/নম্বর থেকে ট্রান্সফার করুন এবং ট্রানজেকশন আইডি শেয়ার করুন।</p>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="p-4 border rounded text-center cursor-pointer payment-option" onclick="showPayment('bkash')">
+          <img src="https://placehold.co/80x24/E1186A/ffffff?text=bKash" alt="bKash" class="mx-auto mb-2">
+          <div class="font-semibold">bKash</div>
+          <div class="text-sm text-gray-600 mt-1">Merchant/Personal: +8801XXXXXXXXX</div>
+        </div>
+        <div class="p-4 border rounded text-center cursor-pointer payment-option" onclick="showPayment('nagad')">
+          <img src="https://placehold.co/80x24/F6921E/ffffff?text=Nagad" alt="Nagad" class="mx-auto mb-2">
+          <div class="font-semibold">Nagad</div>
+          <div class="text-sm text-gray-600 mt-1">Merchant/Personal: +8801XXXXXXXXX</div>
+        </div>
+      </div>
+
+      <div id="payment-details" class="mt-4 hidden p-4 rounded border"></div>
+    </section>
+
+    <!-- WORKER ONBOARD -->
+    <section id="workers" class="bg-white p-6 rounded-xl card-shadow">
+      <h2 class="text-2xl font-bold mb-3">কর্মী রেজিস্ট্রেশন</h2>
+      <p class="text-sm text-gray-700 mb-4">আপনি যেকোনো দক্ষতা নিয়ে যোগ দিতে পারেন — আমাদের টিম কাজ সরবরাহ করবে।</p>
+
+      <form id="worker-reg" class="grid md:grid-cols-2 gap-3">
+        <input id="w-name" class="p-3 border rounded" placeholder="নাম" required />
+        <input id="w-phone" class="p-3 border rounded" placeholder="ফোন" required />
+        <input id="w-nid" class="p-3 border rounded" placeholder="NID (বৈকল্পিক)" />
+        <select id="w-skill" class="p-3 border rounded">
+          <option>Electrician</option>
+          <option>Plumber</option>
+          <option>Mason</option>
+          <option>Painter</option>
+          <option>Maid</option>
+          <option>Caregiver</option>
+          <option>Welder</option>
+          <option>Other</option>
+        </select>
+        <button id="worker-submit" class="btn-primary text-white py-3 rounded" type="submit">রেজিস্টার করুন</button>
+      </form>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="bg-white p-6 rounded-xl card-shadow">
+      <h2 class="text-2xl font-bold mb-3">প্রশ্ন/উত্তর</h2>
+      <details class="mb-2"><summary class="font-semibold">কীভাবে পেমেন্ট করবেন?</summary><div class="mt-2 text-sm text-gray-600">bKash / Nagad / Bank Transfer / Cash গ্রহণ করা হয়।</div></details>
+      <details class="mb-2"><summary class="font-semibold">কর্মী কিভাবে ভেরিফাই করা হয়?</summary><div class="mt-2 text-sm text-gray-600">NID ও রেফারেন্স যাচাই করা হয়।</div></details>
+      <details class="mb-2"><summary class="font-semibold">রিফান্ড নীতি?</summary><div class="mt-2 text-sm text-gray-600">কাজ না হলে পুরো/আংশিক ফেরত—শর্ত প্রযোজ্য।</div></details>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section id="contact" class="bg-white p-6 rounded-xl card-shadow">
+      <h2 class="text-2xl font-bold mb-3">যোগাযোগ</h2>
+      <p class="text-sm text-gray-600">Location: Basabo, Dhaka</p>
+      <p class="text-sm text-gray-600">Phone: <a href="tel:+8801605888672" class="text-accent">+880 1605-888672</a></p>
+      <p class="text-sm text-gray-600">Email: info@universalcare.example</p>
+      <div class="mt-3">
+        <a href="https://facebook.com/universalcarebd" target="_blank" class="mr-3 text-indigo-600">Facebook</a>
+        <a href="https://wa.me/8801605888672" target="_blank" class="text-indigo-600">WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mt-8 py-6 bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="font-semibold">Universal Care & Home Services Ltd.</div>
+      <div class="text-sm text-gray-400 mt-1">© <span id="year"></span> Universal Care. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ADMIN MODAL -->
+  <div id="admin-modal" class="fixed inset-0 hidden items-center justify-center admin-backdrop">
+    <div class="bg-white rounded-xl p-6 w-full max-w-sm">
+      <h3 class="text-xl font-bold mb-3">অ্যাডমিন লগইন</h3>
+      <p class="text-sm text-gray-600 mb-3">ডেমো পাসওয়ার্ড: <strong>admin123</strong></p>
+      <input id="admin-pass" type="password" placeholder="পাসওয়ার্ড" class="w-full p-3 border rounded mb-3" />
+      <div class="flex justify-between gap-2">
+        <button id="admin-close" class="px-4 py-2 border rounded">বন্ধ</button>
+        <button id="admin-login-btn" class="btn-primary text-white px-4 py-2 rounded">লগইন</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD (overlay) -->
+  <div id="admin-panel" class="fixed inset-0 hidden bg-white overflow-auto z-50 p-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-bold">অ্যাডমিন ড্যাশবোর্ড</h2>
+        <div class="flex gap-2">
+          <button id="admin-close-panel" class="px-3 py-2 border rounded">Close</button>
+          <button id="admin-logout" class="px-3 py-2 bg-red-500 text-white rounded">Logout</button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-gray-50 p-4 rounded">
+          <h3 class="font-semibold mb-2">নতুন কর্মী যোগ</h3>
+          <form id="admin-worker-form" class="space-y-2">
+            <input id="adm-w-name" class="p-2 border rounded w-full" placeholder="নাম" required />
+            <input id="adm-w-skill" class="p-2 border rounded w-full" placeholder="দক্ষতা" required />
+            <input id="adm-w-nid" class="p-2 border rounded w-full" placeholder="NID" />
+            <button class="btn-primary text-white px-3 py-2 rounded w-full" type="submit">জমা করুন</button>
+          </form>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded">
+          <h3 class="font-semibold mb-2">বুকিংস / কর্মী তালিকা</h3>
+          <div id="admin-data" class="space-y-2 text-sm text-gray-700 max-h-72 overflow-auto">
+            <div id="adm-loading">No data yet (local mode)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
